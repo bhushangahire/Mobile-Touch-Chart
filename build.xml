@@ -7,7 +7,7 @@
     <target name='default' depends='compile'/>
 	
     <target name='compile'>
-        <concat destfile='${root}/oppo-charting-debug.js' overwrite='true'>
+        <concat destfile='${root}/mobile-touch-chart-debug.js' overwrite='true'>
             <filelist id="coresourcefiles" dir="${basedir}/src">
 		<file name='Ext-more.js'/>
 		<file name='util/Array.js'/>
@@ -74,8 +74,8 @@
             </filelist>
 	</concat>
 	<java dir="${root}" jar="${lib-dir}/yuicompressor-2.4.2.jar" fork="true"
-	    failonerror="true" output='${root}/oppo-charting.js' logError="true">
-	    <arg file='${root}/oppo-charting-debug.js'/>
+	    failonerror="true" output='${root}/mobile-touch-chart.js' logError="true">
+	    <arg file='${root}/mobile-touch-chart-debug.js'/>
 	</java>
     </target>
 </project>
