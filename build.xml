@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="oppo-touching" default="default" basedir=".">
+    
+    <property name="root" value="${basedir}" />
+    <property name="lib-dir" value="${root}/build/lib" />
+    
+    <target name='default' depends='compile'/>
+	
+    <target name='compile'>
+        <concat destfile='${root}/oppo-charting-debug.js' overwrite='true'>
+            <filelist id="coresourcefiles" dir="${basedir}/src">
+		<file name='Ext-more.js'/>
+		<file name='util/Array.js'/>
+		<file name='util/Date.js'/>
+		
+		<file name='util/target/Sprite.js'/>
+		<file name='util/target/SpriteGroup.js'/>
+		
+		<file name='util/CubicBezier.js'/>
+		<file name='util/Easing.js'/>
+		<file name='util/PropHandler.js'/>
+		<file name='util/PseudoEasing.js'/>
+	    
+		<file name='util/Queue.js'/>
+		<file name='util/Animator.js'/>
+		<file name='util/Anim.js'/>
+	    
+		<file name='util/TaskMgr.js'/>
+		<file name='util/Manager.js'/>
+		<file name='util/Animate.js'/>
+		
+		<file name='layout/Draw.js'/>
+		<!-- Charting component -->
+		<file name='chart/Callouts.js'/>
+		<file name='chart/Mask.js'/>
+		<file name='chart/Shapes.js'/>
+		<file name='draw/Color.js'/>
+		<file name='draw/Draw.js'/>
+		<file name='draw/Matrix.js'/>
+		<file name='chart/Labels.js'/>
+		<file name='chart/theme/Base.js'/>
+		
+		<file name='draw/Sprite.js'/>
+		<file name='draw/SpriteGroup.js'/>
+		<file name='chart/LegendItem.js'/>
+		<file name='chart/Legend.js'/>
+		<file name='draw/Surface.js'/>
+		<file name='draw/engine/Canvas.js'/>
+		<file name='draw/engine/SVG.js'/>
+		<file name='draw/engine/VML.js'/>
+		<file name='chart/Highlights.js'/>
+		
+		<file name='chart/MaskLayer.js'/>
+		<file name='draw/Component.js'/>
+		<file name='chart/Chart.js'/>
+		<file name='chart/TipSurface.js'/>
+		<file name='chart/axis/Abstract.js'/>
+		<file name='chart/axis/Axis.js'/>
+		<file name='chart/axis/Category.js'/>
+		<file name='chart/axis/Numeric.js'/>
+		<file name='chart/axis/Radial.js'/>
+		<file name='chart/axis/Time.js'/>
+		<file name='chart/Tips.js'/>
+		<file name='chart/series/Series.js'/>
+		<file name='chart/series/Cartesian.js'/>
+		<file name='chart/series/Area.js'/>
+		<file name='chart/series/Bar.js'/>
+		<file name='chart/series/Column.js'/>
+		<file name='chart/series/Line.js'/>
+		<file name='chart/series/Pie.js'/>
+		<file name='chart/series/Radar.js'/>
+		<file name='chart/series/Scatter.js'/>
+		
+            </filelist>
+	</concat>
+	<java dir="${root}" jar="${lib-dir}/yuicompressor-2.4.2.jar" fork="true"
+	    failonerror="true" output='${root}/oppo-charting.js' logError="true">
+	    <arg file='${root}/oppo-charting-debug.js'/>
+	</java>
+    </target>
+</project>
